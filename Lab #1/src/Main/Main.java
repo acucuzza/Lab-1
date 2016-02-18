@@ -17,7 +17,7 @@ public class Main {
 		draw = user_input.nextInt();
 		
 		double required_income;
-		System.out.println("Enter the expected average return on an investement: ");
+		System.out.println("Enter the investement: ");
 		required_income = user_input.nextDouble();
 		
 		double SSI_income;
@@ -25,8 +25,8 @@ public class Main {
 		SSI_income = user_input.nextDouble();
 		
 		user_input.close();
-		
-		// future value formula & payment formula
+		double total_saving = (required_income-SSI_income)*((1-(1/(Math.pow(1+(average_return/100)/12,years_to_work*12 )))))/((average_return/100)/12);
+		double save_monthly = total_saving*(((average_return/100)/12)/((Math.pow(1+(average_return/100)/12, years_to_work*12))-1));
 	}
 }
 
