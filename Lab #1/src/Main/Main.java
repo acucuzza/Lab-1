@@ -3,6 +3,11 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
+		user();
+		
+		
+	}
+	public static void user() {
 		Scanner user_input = new Scanner(System.in);
 
 		System.out.println("Enter how many years you plan to work: ");
@@ -23,8 +28,8 @@ public class Main {
 		user_input.close();
 		double total_saving = total_saving(required_income, SSI_income, annual_return, years_to_work);
 		double save_monthly = save_monthly(total_saving, annual_return, years_to_work);
-		System.out.printf("%.2f",total_saving, "\n");
-		System.out.printf("%.2f",save_monthly, "\n");
+		System.out.printf("%.2f%n",total_saving);
+		System.out.printf("%.2f%n",save_monthly);
 	}
 	public static double total_saving(double required_income,double SSI_income,double annual_return,int years_to_work) {
 		double total_saving = (required_income-SSI_income)*((1-(1/(Math.pow(1+(annual_return/100)/12, years_to_work*12 )))))/((annual_return/100)/12);
